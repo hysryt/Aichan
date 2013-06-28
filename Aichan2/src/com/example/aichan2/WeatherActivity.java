@@ -35,6 +35,8 @@ public class WeatherActivity extends Activity {
 	LinearLayout dateLayout;
 	LinearLayout weatherLayout;
 	
+	Button reloadButton;
+	
 	LinearLayout progressLayout;
 	LinearLayout mainLayout;
 	LinearLayout errorLayout;
@@ -59,6 +61,14 @@ public class WeatherActivity extends Activity {
 		setLayout();
 		
 		retryButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				visibleProgressLayout();
+				getWeather();
+			}
+		});
+		
+		reloadButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				visibleProgressLayout();
@@ -188,6 +198,7 @@ public class WeatherActivity extends Activity {
     private void setLayout() {    	
 		progressLayout = (LinearLayout)findViewById(R.id.progressLayout);
 		mainLayout = (LinearLayout)findViewById(R.id.mainLayout);
+		reloadButton = (Button)findViewById(R.id.reloadButton);
 		
 		errorLayout = (LinearLayout)findViewById(R.id.errorLayout);
 		errorMessageView = (TextView)findViewById(R.id.errorMessageView);
