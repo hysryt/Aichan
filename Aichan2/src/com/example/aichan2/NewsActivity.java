@@ -174,9 +174,9 @@ public class NewsActivity extends Activity implements News.Callback {
     		case 7: category = News.CATEGORY_LOCAL; break;
     	}
     	
-    	if(currentCategory == null || !currentCategory.equals(category)) {
-    		currentCategory = category;
-    		
+    	if(category != null) {
+			currentCategory = category;
+			
 	    	if(currentTask != null) {
 	    		currentTask.stop();
 	    	}
