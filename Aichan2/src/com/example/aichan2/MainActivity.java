@@ -36,11 +36,10 @@ public class MainActivity extends Activity implements BlinkEventListener {
 	final static int KEYBOARD = 0;
 	final static int MIKE = 1;
 	
-	final static int OPENING = 0;
-	final static int SEND_USERNAME = 1;
-	final static int NOT_YES_NO_ANSWER = 2;
+	final static int HEAR_USER_NAME = 0;
+	final static int WAIT_YESNO = 1;
 	final static int ENDING = 3;
-	int setUserNameState = OPENING;
+	int setUserNameState = HEAR_USER_NAME;
 	
 	Button keyboardButton;
 	Button mikeButton;
@@ -222,7 +221,7 @@ public class MainActivity extends Activity implements BlinkEventListener {
 	
 			if(setUserName || mUserName == null) {
 				setUserName = true;
-				setUserNameState = OPENING;
+				setUserNameState = HEAR_USER_NAME;
 				// TODO ユーザー名を設定する
 				messageWindow.setText("あなたのこと、なんて呼べばいい？", true);
 			} else {
@@ -348,19 +347,19 @@ public class MainActivity extends Activity implements BlinkEventListener {
 		
 		// ユーザー名の設定中かどうか
 		if(setUserName) {
-			if(setUserNameState == OPENING) {
+			if(setUserNameState == HEAR_USER_NAME) {
 				mTempUserName = message;
 				setResMessage("「"+ mTempUserName +"」でいい？（はい／いいえ）");
-				setUserNameState = SEND_USERNAME;
+				setUserNameState = WAIT_YESNO;
 				
-			} else if(setUserNameState == SEND_USERNAME) {
+			} else if(setUserNameState == WAIT_YESNO) {
 				if(message.equals("はい")) {
 					setUserName(mTempUserName);
 					setResMessage("よろしく、"+ mUserName);
 					setUserNameState = ENDING;
 					setUserName = false;
 				} else if(message.equals("いいえ")) {
-					setUserNameState = OPENING;
+					setUserNameState = HEAR_USER_NAME;
 					setResMessage("あなたのこと、なんて呼べばいい？");
 				} else {
 					setResMessage("「はい」か「いいえ」で答えて・・・\n「"+ mTempUserName +"」でいい？（はい／いいえ）");
