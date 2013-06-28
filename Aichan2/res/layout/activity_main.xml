@@ -1,0 +1,177 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/escape"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Button" />
+
+    <TextView
+        android:id="@+id/progressMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#000000" />
+
+    <FrameLayout
+        android:id="@+id/FrameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/aiView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/aiver8_c3_ver3" >
+
+<requestFocus/>
+            </ImageView>
+		
+        <ImageView
+            android:id="@+id/mabataki"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/aiver8_c3_ver2_2"
+            android:visibility="gone" />
+		
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="right"
+                android:layout_weight="2"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <!--  -->
+
+                <ScrollView
+                    android:id="@+id/debugView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#aa000000"
+                    android:fillViewport="true"
+                    android:fitsSystemWindows="false"
+                    android:visibility="gone" >
+
+	                <TextView
+	                    android:id="@+id/textDebugView"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="match_parent"
+	                    android:background="#aa000000"
+	                    android:padding="3dp"
+	                    android:text=""
+	                    android:textColor="#ffffff"
+	                    android:textSize="10sp" />
+
+                </ScrollView>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:text="あい"
+                    android:textColor="#000000" />
+
+                <ScrollView
+                    android:id="@+id/scrollView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="#aa000000" >
+
+                    <com.example.aichan2.SerifView
+                        android:id="@+id/msgWindow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:gravity="left|top"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="15dp"
+                        android:singleLine="false"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp" />
+
+                </ScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/mike_button"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/mikebutton_image_selecter"
+                        android:text="マイク"
+                        android:textColor="@color/button_textcolor_selecter" />
+
+                    <Button
+                        android:id="@+id/tenkiButton"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/keyboardbutton_image_selecter"
+                        android:text="キーボード"
+                        android:textColor="@color/button_textcolor_selecter" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

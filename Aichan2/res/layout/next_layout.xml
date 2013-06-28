@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#aaffffff"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp" >
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="話す言葉を入力..."
+            android:imeOptions="actionUnspecified" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/tenkiButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="0"
+            android:background="@drawable/button_image_selecter"
+            android:text="話す" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tomorrowDate"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#bbbbbb" />
+
+    <TextView
+        android:id="@+id/debugView"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#777777"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/progressMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

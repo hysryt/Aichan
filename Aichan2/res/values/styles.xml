@@ -1,0 +1,44 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <!-- Activityアニメーション -->
+	<style name="Animation" parent="android:Animation" />
+	<style name="Animation.Activity" parent="android:Animation.Activity">
+		<!-- 起動時の起動先 -->
+		<item name="android:activityOpenEnterAnimation">@anim/op_en</item>
+		<!-- 起動時の起動元 -->
+		<item name="android:activityOpenExitAnimation">@anim/op_ex</item>
+		<!-- 終了時の終了先 -->
+		<item name="android:activityCloseEnterAnimation">@anim/cl_en</item>
+		<!-- 終了時の終了元 -->
+		<item name="android:activityCloseExitAnimation">@anim/cl_ex</item>
+	</style>
+	
+	<!-- MenuActivityアニメーション -->
+	<style name="Animation.MenuActivity" parent="android:Animation.Activity">
+		<!-- 起動時の起動先 -->
+		<item name="android:activityOpenEnterAnimation">@anim/menu_op_en</item>
+		<!-- 起動時の起動元 -->
+		<item name="android:activityOpenExitAnimation">@anim/menu_op_ex</item>
+		<!-- 終了時の終了先 -->
+		<item name="android:activityCloseEnterAnimation">@anim/menu_cl_en</item>
+		<!-- 終了時の終了元 -->
+		<item name="android:activityCloseExitAnimation">@anim/menu_cl_ex</item>
+	</style>
+</resources>

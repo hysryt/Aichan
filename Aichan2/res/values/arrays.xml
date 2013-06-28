@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="message_fontsize_key">
+        <item >13sp</item>
+        <item >15sp</item>
+        <item >30sp</item>
+    </string-array>
+    
+    <string-array name="message_fontsize_value">
+        <item >13</item>
+        <item >15</item>
+        <item >30</item>
+    </string-array>
+    
+    
+    <string-array name="todofuken_string">
+        <item>北海道</item>
+        <item>青森県</item>
+        <item>秋田県</item>
+        <item>岩手県</item>
+        <item>山形県</item>
+        <item>宮城県</item>
+        <item>福島県</item>
+        <item>茨城県</item>
+        <item>栃木県</item>
+        <item>群馬県</item>
+        <item>埼玉県</item>
+        <item>東京都</item>
+        <item>神奈川県</item>
+        <item>千葉県</item>
+        <item>静岡県</item>
+        <item>山梨県</item>
+        <item>新潟県</item>
+        <item>長野県</item>
+        <item>富山県</item>
+        <item>石川県</item>
+        <item>福井県</item>
+        <item>岐阜県</item>
+        <item>愛知県</item>
+        <item>三重県</item>
+        <item>滋賀県</item>
+        <item>京都府</item>
+        <item>大阪府</item>
+        <item>奈良県</item>
+        <item>和歌山県</item>
+        <item>兵庫県</item>
+        <item>岡山県</item>
+        <item>鳥取県</item>
+        <item>広島県</item>
+        <item>島根県</item>
+        <item>山口県</item>
+        <item>香川県</item>
+        <item>徳島県</item>
+        <item>愛媛県</item>
+        <item>高知県</item>
+        <item>福岡県</item>
+        <item>佐賀県</item>
+        <item>長崎県</item>
+        <item>大分県</item>
+        <item>熊本県</item>
+        <item>宮崎県</item>
+        <item>鹿児島県</item>
+        <item>沖縄県</item>
+    </string-array>
+    
+	<array name="todofuken_value">
+	    <item>@array/hokkaido_area_string</item>
+        <item>@array/aomori_area_string</item>
+        <item>@array/akita_area_string</item>
+        <item>@array/iwate_area_string</item>
+        <item>@array/yamagata_area_string</item>
+        <item>@array/miyagi_area_string</item>
+        <item>@array/fukusima_area_string</item>
+        <item>@array/ibaraki_area_string</item>
+        <item>@array/totigi_area_string</item>
+        <item>@array/gunma_area_string</item>
+        <item>@array/saitama_area_string</item>
+        <item>@array/tokyo_area_string</item>
+        <item>@array/kanagawa_area_string</item>
+        <item>@array/tiba_area_string</item>
+        <item>@array/sizuoka_area_string</item>
+        <item>@array/yamanasi_area_string</item>
+        <item>@array/nigata_area_string</item>
+        <item>@array/nagano_area_string</item>
+        <item>@array/toyama_area_string</item>
+        <item>@array/isikawa_area_string</item>
+        <item>@array/fukui_area_string</item>
+        <item>@array/gifu_area_string</item>
+        <item>@array/aiti_area_string</item>
+        <item>@array/mie_area_string</item>
+        <item>@array/siga_area_string</item>
+        <item>@array/kyoto_area_string</item>
+        <item>@array/osaka_area_string</item>
+        <item>@array/nara_area_string</item>
+        <item>@array/wakayama_area_string</item>
+        <item>@array/hyogo_area_string</item>
+        <item>@array/okayama_area_string</item>
+        <item>@array/tottori_area_string</item>
+        <item>@array/hirosima_area_string</item>
+        <item>@array/simane_area_string</item>
+        <item>@array/yamaguti_area_string</item>
+        <item>@array/kagawa_area_string</item>
+        <item>@array/tokusima_area_string</item>
+        <item>@array/ehime_area_string</item>
+        <item>@array/kouti_area_string</item>
+        <item>@array/fukuoka_area_string</item>
+        <item>@array/saga_area_string</item>
+        <item>@array/nagasaki_area_string</item>
+        <item>@array/oita_area_string</item>
+        <item>@array/kumamoto_area_string</item>
+        <item>@array/miyazaki_area_string</item>
+        <item>@array/kagosima_area_string</item>
+        <item>@array/okinawa_area_string</item>
+    </array>
+    
+    <string-array name="hokkaido_area_string">
+        <item>宗谷地方（稚内）</item>
+        <item>上川地方（旭川）</item>
+        <item>留萌地方（留萌）</item>
+        <item>石狩地方（札幌）</item>
+        <item>空知地方（岩見沢）</item>
+        <item>後志地方（倶知安）</item>
+        <item>綱走地方（綱走）</item>
+        <item>北見地方（北見）</item>
+        <item>紋別地方（紋別）</item>
+        <item>根室地方（根室）</item>
+        <item>釧路地方（釧路）</item>
+        <item>十勝地方（帯広）</item>
+        <item>胆振地方（室蘭）</item>
+        <item>日高地方（浦河）</item>
+        <item>渡島地方（函館）</item>
+        <item>檜山地方（江差）</item>
+    </string-array>
+    
+    <string-array name="hokkaido_area_value">
+        <item>1100</item>
+        <item>1200</item>
+        <item>1300</item>
+        <item>1400</item>
+        <item>1500</item>
+        <item>1600</item>
+        <item>1710</item>
+        <item>1720</item>
+        <item>1730</item>
+        <item>1800</item>
+        <item>1900</item>
+        <item>2000</item>
+        <item>2100</item>
+        <item>2200</item>
+        <item>2300</item>
+        <item>2400</item>
+    </string-array>
+    
+    
+    <!-- 青森 -->
+    <string-array name="aomori_area_string">
+        <item>津軽（青森）</item>
+        <item>下北（むつ）</item>
+        <item>三八上北（八戸）</item>
+    </string-array>
+    
+    <string-array name="aomori_area_value">
+        <item>3110</item>
+        <item>3120</item>
+        <item>3130</item>
+    </string-array>
+    
+    
+    <!-- 秋田 -->
+    <string-array name="akita_area_string">
+        <item>沿岸（秋田）</item>
+        <item>内陸（横手)</item>
+    </string-array>
+    
+    <string-array name="akita_area_value">
+        <item>3210</item>
+        <item>3220</item>
+    </string-array>
+    
+    
+    <!-- 岩手 -->
+    <string-array name="iwate_area_string">
+        <item>内陸（盛岡）</item>
+        <item>沿岸北部（宮古）</item>
+        <item>沿岸南部（大船渡）</item>
+    </string-array>
+    
+    <string-array name="iwate_area_value">
+        <item>3310</item>
+        <item>3320</item>
+        <item>3330</item>
+    </string-array>
+    
+    
+    <!-- 山形 -->
+    <string-array name="yamagata_area_string">
+        <item>村山（山形）</item>
+        <item>置賜（米沢）</item>
+        <item>庄内（酒田）</item>
+        <item>最上（新庄）</item>
+    </string-array>
+    
+    <string-array name="yamagata_area_value">
+        <item>3510</item>
+        <item>3520</item>
+        <item>3530</item>
+        <item>3540</item>
+    </string-array>
+    
+    
+    <!-- 宮城 -->
+    <string-array name="miyagi_area_string">
+        <item>東部（仙台）</item>
+        <item>西部（白石）</item>
+    </string-array>
+    
+    <string-array name="miyagi_area_value">
+        <item>3410</item>
+        <item>3420</item>
+    </string-array>
+    
+    
+    <!-- 福島 -->
+    <string-array name="fukusima_area_string">
+        <item>中通り（福島）</item>
+        <item>浜通り（相馬）</item>
+        <item>会津（若松）</item>
+    </string-array>
+    
+    <string-array name="fukusima_area_value">
+        <item>3610</item>
+        <item>3620</item>
+        <item>3630</item>
+    </string-array>
+    
+    
+    <!-- 茨城 -->
+    <string-array name="ibaraki_area_string">
+        <item>北部（水戸）</item>
+        <item>南部（土浦）</item>
+    </string-array>
+    
+    <string-array name="ibaraki_area_value">
+        <item>4010</item>
+        <item>4020</item>
+    </string-array>
+    
+    
+    <!-- 栃木 -->
+    <string-array name="totigi_area_string">
+        <item>南部（宇都宮）</item>
+        <item>北部（大田原）</item>
+    </string-array>
+    
+    <string-array name="totigi_area_value">
+        <item>4110</item>
+        <item>4120</item>
+    </string-array>
+    
+    
+    <!-- 群馬 -->
+    <string-array name="gunma_area_string">
+        <item>南部（前橋）</item>
+        <item>北部（水上）</item>
+    </string-array>
+    
+    <string-array name="gunma_area_value">
+        <item>4210</item>
+        <item>4220</item>
+    </string-array>
+    
+    
+    <!-- 埼玉 -->
+    <string-array name="saitama_area_string">
+        <item>南部（さいたま）</item>
+        <item>北部（熊谷）</item>
+        <item>秩父地方（秩父）</item>
+    </string-array>
+    
+    <string-array name="saitama_area_value">
+        <item>4310</item>
+        <item>4320</item>
+        <item>4330</item>
+    </string-array>
+    
+    
+    <!-- 東京 -->
+    <string-array name="tokyo_area_string">
+        <item>東京地方（東京）</item>
+        <item>伊豆諸島北部（大島）</item>
+        <item>伊豆諸島南部（八丈島）</item>
+        <item>小笠原諸島（父島）</item>
+    </string-array>
+    
+    <string-array name="tokyo_area_value">
+        <item>4410</item>
+        <item>4420</item>
+        <item>4430</item>
+        <item>9600</item>
+    </string-array>
+    
+    
+    <!-- 神奈川 -->
+    <string-array name="kanagawa_area_string">
+        <item>東部（横浜）</item>
+        <item>西部（小田原）</item>
+    </string-array>
+    
+    <string-array name="kanagawa_area_value">
+        <item>4610</item>
+        <item>4620</item>
+    </string-array>
+    
+    
+    <!-- 千葉 -->
+    <string-array name="tiba_area_string">
+        <item>北西部（千葉）</item>
+        <item>北東部（銚子）</item>
+        <item>南部（館山）</item>
+    </string-array>
+    
+    <string-array name="tiba_area_value">
+        <item>4510</item>
+        <item>4520</item>
+        <item>4530</item>
+    </string-array>
+    
+    
+    <!-- 静岡 -->
+    <string-array name="sizuoka_area_string">
+        <item>中部（静岡）</item>
+        <item>伊豆（石廊崎）</item>
+        <item>東部（三島）</item>
+        <item>西部（浜松）</item>
+    </string-array>
+    
+    <string-array name="sizuoka_area_value">
+        <item>5010</item>
+        <item>5020</item>
+        <item>5030</item>
+        <item>5040</item>
+    </string-array>
+    
+    
+    <!-- 山梨 -->
+    <string-array name="yamanasi_area_string">
+        <item>中・西部（甲府）</item>
+        <item>東部・富士五湖（河口湖）</item>
+    </string-array>
+    
+    <string-array name="yamanasi_area_value">
+        <item>4910</item>
+        <item>4920</item>
+    </string-array>
+    
+    
+    <!-- 新潟 -->
+    <string-array name="nigata_area_string">
+        <item>下越（新潟）</item>
+        <item>中越（長岡）</item>
+        <item>上越（高田）</item>
+        <item>佐渡（相川）</item>
+    </string-array>
+    
+    <string-array name="nigata_area_value">
+        <item>5410</item>
+        <item>5420</item>
+        <item>5430</item>
+        <item>5440</item>
+    </string-array>
+    
+    
+    <!-- 長野 -->
+    <string-array name="nagano_area_string">
+        <item>北部（長野）</item>
+        <item>中部（松本）</item>
+        <item>南部（飯田）</item>
+    </string-array>
+    
+    <string-array name="nagano_area_value">
+        <item>4810</item>
+        <item>4820</item>
+        <item>4830</item>
+    </string-array>
+    
+    
+    <!-- 富山 -->
+    <string-array name="toyama_area_string">
+        <item>東部（富山）</item>
+        <item>西部（伏木）</item>
+    </string-array>
+    
+    <string-array name="toyama_area_value">
+        <item>5510</item>
+        <item>5520</item>
+    </string-array>
+    
+    
+    <!-- 石川 -->
+    <string-array name="isikawa_area_string">
+        <item>加賀（金沢）</item>
+        <item>能登（輪島）</item>
+    </string-array>
+    
+    <string-array name="isikawa_area_value">
+        <item>5610</item>
+        <item>5620</item>
+    </string-array>
+    
+    
+    <!-- 福井 -->
+    <string-array name="fukui_area_string">
+        <item>嶺北（福井）</item>
+        <item>嶺南（敦賀）</item>
+    </string-array>
+    
+    <string-array name="fukui_area_value">
+        <item>5710</item>
+        <item>5720</item>
+    </string-array>
+    
+    
+    <!-- 岐阜 -->
+    <string-array name="gifu_area_string">
+        <item>美濃地方（岐阜）</item>
+        <item>飛騨地方（高山）</item>
+    </string-array>
+    
+    <string-array name="gifu_area_value">
+        <item>5210</item>
+        <item>5220</item>
+    </string-array>
+    
+    
+    <!-- 愛知 -->
+    <string-array name="aiti_area_string">
+        <item>西部（名古屋）</item>
+        <item>東部（豊橋）</item>
+    </string-array>
+    
+    <string-array name="aiti_area_value">
+        <item>5110</item>
+        <item>5120</item>
+    </string-array>
+    
+    
+    <!-- 三重 -->
+    <string-array name="mie_area_string">
+        <item>北中部（津）</item>
+        <item>南部（尾鷲）</item>
+    </string-array>
+    
+    <string-array name="mie_area_value">
+        <item>5310</item>
+        <item>5320</item>
+    </string-array>
+    
+    
+    <!-- 滋賀 -->
+    <string-array name="siga_area_string">
+        <item>南部（大津）</item>
+        <item>北部（彦根）</item>
+    </string-array>
+    
+    <string-array name="siga_area_value">
+        <item>6010</item>
+        <item>6020</item>
+    </string-array>
+    
+    
+    <!-- 京都 -->
+    <string-array name="kyoto_area_string">
+        <item>北部（舞鶴）</item>
+        <item>南部（京都）</item>
+    </string-array>
+    
+    <string-array name="kyoto_area_value">
+        <item>400</item>
+        <item>6100</item>
+    </string-array>
+    
+    
+    <!-- 大阪 -->
+    <string-array name="osaka_area_string">
+        <item>大阪府（大阪）</item>
+    </string-array>
+    
+    <string-array name="osaka_area_value">
+        <item>6200</item>
+    </string-array>
+    
+    
+    <!-- 奈良 -->
+    <string-array name="nara_area_string">
+        <item>北部（奈良）</item>
+        <item>南部（風雲）</item>
+    </string-array>
+    
+    <string-array name="nara_area_value">
+        <item>6410</item>
+        <item>6420</item>
+    </string-array>
+    
+    
+    <!-- 和歌山 -->
+    <string-array name="wakayama_area_string">
+        <item>北部（和歌山）</item>
+        <item>南部（潮岬）</item>
+    </string-array>
+    
+    <string-array name="wakayama_area_value">
+        <item>6510</item>
+        <item>6520</item>
+    </string-array>
+    
+    
+    <!-- 兵庫 -->
+    <string-array name="hyogo_area_string">
+        <item>南部（神戸）</item>
+        <item>北部（豊岡）</item>
+    </string-array>
+    
+    <string-array name="hyogo_area_value">
+        <item>6310</item>
+        <item>6320</item>
+    </string-array>
+    
+    
+    <!-- 岡山 -->
+    <string-array name="okayama_area_string">
+        <item>南部（岡山）</item>
+        <item>北部（津山）</item>
+    </string-array>
+    
+    <string-array name="okayama_area_value">
+        <item>6610</item>
+        <item>6620</item>
+    </string-array>
+    
+    
+    <!-- 鳥取 -->
+    <string-array name="tottori_area_string">
+        <item>東部（東部）</item>
+        <item>中・西部（米子）</item>
+    </string-array>
+    
+    <string-array name="tottori_area_value">
+        <item>6910</item>
+        <item>6920</item>
+    </string-array>
+    
+    
+    <!-- 広島 -->
+    <string-array name="hirosima_area_string">
+        <item>南部（広島）</item>
+        <item>北部（庄原）</item>
+    </string-array>
+    
+    <string-array name="hirosima_area_value">
+        <item>6710</item>
+        <item>6720</item>
+    </string-array>
+    
+    
+    <!-- 島根 -->
+    <string-array name="simane_area_string">
+        <item>東部（松江）</item>
+        <item>西部（浜田）</item>
+        <item>隠岐（西郷）</item>
+    </string-array>
+    
+    <string-array name="simane_area_value">
+        <item>6810</item>
+        <item>6820</item>
+        <item>6830</item>
+    </string-array>
+    
+    
+    <!-- 山口 -->
+    <string-array name="yamaguti_area_string">
+        <item>西部（下関）</item>
+        <item>中部（山口）</item>
+        <item>東部（柳井）</item>
+        <item>北部（萩）</item>
+    </string-array>
+    
+    <string-array name="yamaguti_area_value">
+        <item>8110</item>
+        <item>8120</item>
+        <item>8130</item>
+        <item>8140</item>
+    </string-array>
+    
+    
+    <!-- 香川 -->
+    <string-array name="kagawa_area_string">
+        <item>香川県（高松）</item>
+    </string-array>
+    
+    <string-array name="kagawa_area_value">
+        <item>7200</item>
+    </string-array>
+    
+    
+    <!-- 徳島 -->
+    <string-array name="tokusima_area_string">
+        <item>北部（徳島）</item>
+        <item>南部（日和佐）</item>
+    </string-array>
+    
+    <string-array name="tokusima_area_value">
+        <item>7110</item>
+        <item>7120</item>
+    </string-array>
+    
+    
+    <!-- 愛媛 -->
+    <string-array name="ehime_area_string">
+        <item>中予（松山）</item>
+        <item>東予（新居浜）</item>
+        <item>南予（宇和島）</item>
+    </string-array>
+    
+    <string-array name="ehime_area_value">
+        <item>7310</item>
+        <item>7320</item>
+        <item>7330</item>
+    </string-array>
+    
+    
+    <!-- 高知 -->
+    <string-array name="kouti_area_string">
+        <item>中部（高知）</item>
+        <item>東部（室戸岬）</item>
+        <item>西部（清水）</item>
+    </string-array>
+    
+    <string-array name="kouti_area_value">
+        <item>7410</item>
+        <item>7420</item>
+        <item>7430</item>
+    </string-array>
+    
+    
+    <!-- 福岡 -->
+    <string-array name="fukuoka_area_string">
+        <item>福岡地方（福岡）</item>
+        <item>北九州地方（八幡）</item>
+        <item>筑豊地方（飯塚）</item>
+        <item>筑後地方（久留米）</item>
+    </string-array>
+    
+    <string-array name="fukuoka_area_value">
+        <item>8210</item>
+        <item>8220</item>
+        <item>8230</item>
+        <item>8240</item>
+    </string-array>
+    
+    
+    <!-- 佐賀 -->
+    <string-array name="saga_area_string">
+        <item>南部（佐賀）</item>
+        <item>北部（伊万里）</item>
+    </string-array>
+    
+    <string-array name="saga_area_value">
+        <item>8510</item>
+        <item>8520</item>
+    </string-array>
+    
+    
+    <!-- 長崎 -->
+    <string-array name="nagasaki_area_string">
+        <item>南部（長崎）</item>
+        <item>北部（佐世保）</item>
+        <item>壱岐・対馬（厳原）</item>
+        <item>五島（福江）</item>
+    </string-array>
+    
+    <string-array name="nagasaki_area_value">
+        <item>8410</item>
+        <item>8420</item>
+        <item>700</item>
+        <item>800</item>
+    </string-array>
+    
+    
+    <!-- 大分 -->
+    <string-array name="oita_area_string">
+        <item>中部（大分）</item>
+        <item>北部（中津）</item>
+        <item>西部（日田）</item>
+        <item>南部（佐伯）</item>
+    </string-array>
+    
+    <string-array name="oita_area_value">
+        <item>8310</item>
+        <item>8320</item>
+        <item>8330</item>
+        <item>8340</item>
+    </string-array>
+    
+    
+    <!-- 熊本 -->
+    <string-array name="kumamoto_area_string">
+        <item>熊本地方（熊本）</item>
+        <item>阿蘇地方（阿蘇乙姫）</item>
+        <item>天草・芦北地方（午深）</item>
+        <item>球磨地方（人吉）</item>
+    </string-array>
+    
+    <string-array name="kumamoto_area_value">
+        <item>8610</item>
+        <item>8620</item>
+        <item>8630</item>
+        <item>8640</item>
+    </string-array>
+    
+    
+    <!-- 宮崎 -->
+    <string-array name="miyazaki_area_string">
+        <item>南部平野部（宮崎）</item>
+        <item>北部平野部（延岡）</item>
+        <item>南部山沿い（都城）</item>
+        <item>北部山沿い（高千穂）</item>
+    </string-array>
+    
+    <string-array name="miyazaki_area_value">
+        <item>8710</item>
+        <item>8720</item>
+        <item>8730</item>
+        <item>8740</item>
+    </string-array>
+    
+    
+    <!-- 鹿児島 -->
+    <string-array name="kagosima_area_string">
+        <item>薩摩地方（鹿児島）</item>
+        <item>大隅地方（鹿屋）</item>
+        <item>種子島・屋久島地方（西之表）</item>
+        <item>奄美地方（名瀬）</item>
+    </string-array>
+    
+    <string-array name="kagosima_area_value">
+        <item>8810</item>
+        <item>8820</item>
+        <item>8830</item>
+        <item>1000</item>
+    </string-array>
+    
+    
+    <!-- 沖縄 -->
+    <string-array name="okinawa_area_string">
+        <item>本島中南部（那覇）</item>
+        <item>本島北部（名護）</item>
+        <item>久米島（久米島）</item>
+        <item>大東島地方（南大東島）</item>
+        <item>宮古島地方（宮古島）</item>
+        <item>石垣島地方（石垣島）</item>
+        <item>与那国島地方（与那国島）</item>
+    </string-array>
+    
+    <string-array name="okinawa_area_value">
+        <item>9110</item>
+        <item>9120</item>
+        <item>9130</item>
+        <item>9200</item>
+        <item>9300</item>
+        <item>9400</item>
+        <item>9500</item>
+    </string-array>
+</resources>
