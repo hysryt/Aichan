@@ -30,6 +30,7 @@ public class DatabaseInfo {
 	final static public String USERSEND_MESSAGE_COLUMN = "message";
 	
 	final static public String USERRES_TABLE_NAME = "userres";
+	final static public String USERRES_USERNAME_COLUMN = "userId";
 	final static public String USERRES_SENDID_COLUMN = "sendId";
 	final static public String USERRES_ID_COLUMN = "id";
 	final static public String USERRES_MESSAGE_COLUMN = "message";

@@ -6,8 +6,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.content.ContentValues;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 
@@ -489,6 +491,11 @@ public class DatabaseAccess {
 			return false;
 		}
 		
+		// ユーザ名取得
+		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(App.getInstance().getApplicationContext());
+		String userName = pref.getString(App.PREFKEY_USERNAME, "-");
+		
+		
 		SQLiteDatabase db = helper.getWritableDatabase();
 		
 		int sendId = 1, resId = 1;
@@ -531,6 +538,7 @@ public class DatabaseAccess {
 				
 				// 空白だったら挿入しない
 				if(!resMessage.equals("")) {	
+					values.put(DatabaseInfo.USERRES_USERNAME_COLUMN, userName);
 					values.put(DatabaseInfo.USERRES_ID_COLUMN, resId);
 					values.put(DatabaseInfo.USERRES_SENDID_COLUMN, sendId);
 					values.put(DatabaseInfo.USERRES_MESSAGE_COLUMN, resMessage);
@@ -581,15 +589,22 @@ public class DatabaseAccess {
 	
 	/**
 	 * ユーザ独自返信メッセージの取得
+	 * 存在しない場合は null を返す
 	 */
 	public String[] getUserResMessages(int sendId) {
+		// ユーザ名取得
+		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(App.getInstance().getApplicationContext());
+		String userName = pref.getString(App.PREFKEY_USERNAME, "-");
+		
 		SQLiteDatabase db = helper.getReadableDatabase();
 		
 		List<String> list = new ArrayList<String>();
 		
+		// 送信メッセージIDが一致かつユーザ名が一致するものを取得
 		Cursor c = db.query(DatabaseInfo.USERRES_TABLE_NAME
 				, new String[]{DatabaseInfo.USERRES_MESSAGE_COLUMN}
-				, DatabaseInfo.USERRES_SENDID_COLUMN +" = "+ sendId, null, null, null, null);
+				, DatabaseInfo.USERRES_SENDID_COLUMN +" = "+ sendId +" AND "+ DatabaseInfo.USERRES_USERNAME_COLUMN +" = ?"
+				, new String[]{userName}, null, null, null);
 		
 		boolean isEof = c.moveToFirst();
 		while(isEof) {

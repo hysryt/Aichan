@@ -10,6 +10,8 @@ public class App extends Application {
 	public static final String FIRST_BOOT = "firstBoot";
 	public static final String USER_NAME = "username";
 	
+	public static final String PREFKEY_USERNAME = "userName";
+	
 	private static App instance = null;
 	private Typeface font;
 	private Typeface defaultFont;

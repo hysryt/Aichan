@@ -58,6 +58,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 		db.execSQL(
 			"CREATE TABLE "+ DatabaseInfo.USERRES_TABLE_NAME +"("+
 			"	"+ DatabaseInfo.USERRES_ID_COLUMN +" INT NOT NULL"+
+			"	,"+ DatabaseInfo.USERRES_USERNAME_COLUMN +" TEXT NOT NULL"+ 
 			"	,"+ DatabaseInfo.USERRES_SENDID_COLUMN +" INT NOT NULL"+
 			"	,"+ DatabaseInfo.USERRES_MESSAGE_COLUMN +" TEXT"+
 			");"
