@@ -34,5 +34,19 @@ public class FirstBootActivity extends Activity {
 				editor.commit();
 			}
 		});
+		
+		findViewById(R.id.signUpButton).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(v.getContext(), SignUpActivity.class);
+				startActivity(intent);
+				
+				// Ÿ‰ñ‚©‚ç‚Í‰‰ñ‹N“®‰æ–Ê‚ğÈ—ª
+				SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(v.getContext());
+				Editor editor = pref.edit();
+				editor.putBoolean(App.FIRST_BOOT, false);
+				editor.commit();
+			}
+		});
 	}
 }

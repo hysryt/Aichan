@@ -22,4 +22,10 @@
         android:layout_height="wrap_content"
         android:text="スキップ" />
 
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新規登録" />
+
 </LinearLayout>
