@@ -3,18 +3,19 @@ package com.example.aichan2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.UnknownHostException;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 public abstract class NetAccessAsyncTask extends AsyncTask<String, Object, String>  {
 	boolean error = false;
 	
 	int mTimeout = 5000;
+	String method = "GET";
+	String query = null;
 	
 	
 	public boolean isError() {
@@ -33,6 +34,14 @@ public abstract class NetAccessAsyncTask extends AsyncTask<String, Object, Strin
 		URL url;
 		HttpURLConnection connection = null;
 		
+		if(urls.length >= 2 && (urls[1].equals("POST"))) {
+			method = "POST";
+		}
+		
+		if(urls.length >= 3 && (urls[2] != null)) {
+			query = urls[2];
+		}
+		
 
 		try {
 			url = new URL(strUrl);
@@ -48,7 +57,15 @@ public abstract class NetAccessAsyncTask extends AsyncTask<String, Object, Strin
 		}
 
 		try {
-			connection.setRequestMethod("GET");
+			connection.setRequestMethod(method);
+			if(method.equals("POST")) {
+				connection.setDoOutput(true);
+				if(query != null) {
+					PrintWriter pw = new PrintWriter(connection.getOutputStream());
+					pw.print(query);
+					pw.close();
+				}
+			}
 			
 			connection.setConnectTimeout(mTimeout);
 			reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));

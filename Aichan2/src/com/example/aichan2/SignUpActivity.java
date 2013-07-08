@@ -4,15 +4,20 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SignUpActivity extends Activity {
 	EditText userIdEditText;
 	EditText passwordEditText;
+	
+	String host = "172.18.92.131";
+	String duplicationCheckFile = "DuplicationCheck.php";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +57,21 @@ public class SignUpActivity extends Activity {
 		// まず規約に沿ったユーザIDかをチェック
 		if(!checkUserIdPolicy()) return;
 		
+		String strUrl = "http://"+ host +"/"+ duplicationCheckFile;
+		String tempUserId = userIdEditText.getText().toString();
+		
 		// TODO: 重複チェック
+		NetAccessAsyncTask task = new NetAccessAsyncTask() {		
+			@Override
+			protected void onPostExecute(String result) {
+				if(result.equals("OK")) {
+					Toast.makeText(SignUpActivity.this, "使用可能です", Toast.LENGTH_LONG).show();
+				} else if(result.equals("NG")){
+					Toast.makeText(SignUpActivity.this, "既に使用されています", Toast.LENGTH_LONG).show();
+				}
+			}
+		};
+		task.execute("http://192.168.60.1/DuplicationCheck.php", "POST", "userId="+ tempUserId);
 	}
 	
 	private void onClickOk() {
