@@ -379,7 +379,7 @@ public class MainActivity extends Activity implements BlinkEventListener {
 							protected void onPostExecute(String result) {
 							}
 						};
-						task.execute("http://192.168.60.1/storeUserName.php", "POST", "userId="+ loginUserId+"&password="+password+"&userName="+mUserName);
+						task.execute("http://"+ App.SERVER_IP +"/storeUserName.php", "POST", "userId="+ loginUserId+"&password="+password+"&userName="+mUserName);
 					} else {
 					}
 					

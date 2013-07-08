@@ -19,7 +19,6 @@ public class SignUpActivity extends Activity {
 	EditText userIdEditText;
 	EditText passwordEditText;
 	
-	String host = "192.168.60.1";
 	String duplicationCheckFile = "DuplicationCheck.php";
 	String signUpFile = "signUp.php";
 
@@ -61,7 +60,7 @@ public class SignUpActivity extends Activity {
 		// まず規約に沿ったユーザIDかをチェック
 		if(!checkUserIdPolicy()) return;
 		
-		String strUrl = "http://"+ host +"/"+ duplicationCheckFile;
+		String strUrl = "http://"+ App.SERVER_IP +"/"+ duplicationCheckFile;
 		String tempUserId = userIdEditText.getText().toString();
 		
 		// 重複チェック
@@ -75,7 +74,7 @@ public class SignUpActivity extends Activity {
 				}
 			}
 		};
-		task.execute("http://"+ host+"/"+ duplicationCheckFile, "POST", "userId="+ tempUserId);
+		task.execute("http://"+ App.SERVER_IP +"/"+ duplicationCheckFile, "POST", "userId="+ tempUserId);
 	}
 	
 	private void onClickOk() {
@@ -118,7 +117,7 @@ public class SignUpActivity extends Activity {
 		};
 		
 		// TODO: ユーザ名が既に登録されている場合はそれも一緒に登録させる
-		task.execute("http://"+ host+"/"+ signUpFile, "POST", "userId="+ tempUserId +"&password="+ tempPass);
+		task.execute("http://"+ App.SERVER_IP +"/"+ signUpFile, "POST", "userId="+ tempUserId +"&password="+ tempPass);
 	}
 	
 	private boolean checkUserIdPolicy() {

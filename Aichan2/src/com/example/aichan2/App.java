@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 
 public class App extends Application {
+	public static final String SERVER_IP = "192.168.60.1";
 	private static final String FONT_NAME = "migmix-1p-regular.ttf";
 	
 	public static final String FIRST_BOOT = "firstBoot";
