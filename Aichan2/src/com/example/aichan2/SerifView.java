@@ -83,7 +83,7 @@ class MyHandler extends Handler {
 			flg = false;
 		} else {
 			// 「、」または「・・・」で少し停止
-			if(currentString.endsWith("、") || currentString.endsWith("・・・") || currentString.endsWith("」")) {
+			if(currentString.endsWith("、") || (currentString.endsWith("・・・") && !text.substring(cnt).startsWith("・")) || currentString.endsWith("」")) {
 				interval = 200;
 			}
 			
