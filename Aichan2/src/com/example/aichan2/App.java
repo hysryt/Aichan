@@ -12,6 +12,9 @@ public class App extends Application {
 	
 	public static final String PREFKEY_USERNAME = "userName";
 	
+	// ƒƒOƒCƒ“‚µ‚Ä‚È‚¢ê‡‚Í‘¶İ‚µ‚È‚¢‚©‹ó•¶š("")
+	public static final String PREFKEY_LOGIN_USERID = "loginUserId";
+	
 	private static App instance = null;
 	private Typeface font;
 	private Typeface defaultFont;

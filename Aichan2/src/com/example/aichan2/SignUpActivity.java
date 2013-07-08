@@ -1,10 +1,13 @@
 package com.example.aichan2;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Html;
 import android.text.Spanned;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -89,6 +92,16 @@ public class SignUpActivity extends Activity {
 			protected void onPostExecute(String result) {
 				if(result.equals("OK")) {
 					Toast.makeText(SignUpActivity.this, "登録できました", Toast.LENGTH_LONG).show();
+					String userId = userIdEditText.getText().toString();
+
+					// 現在のログインIDとして設定
+					SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(SignUpActivity.this);
+					Editor editor = pref.edit();
+					editor.putString(App.PREFKEY_LOGIN_USERID, userId);
+					editor.commit();
+					
+					Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+					startActivity(intent);
 				} else if(result.equals("Duplicate")){
 					Toast.makeText(SignUpActivity.this, "既に使用されています", Toast.LENGTH_LONG).show();
 				} else {
