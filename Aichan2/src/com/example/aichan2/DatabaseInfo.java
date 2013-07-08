@@ -7,6 +7,12 @@ public class DatabaseInfo {
 	final static public int DB_VERSION = 1;
 	final static public String DB_NAME = "aidb";
 	
+	final static public String USER_TABLE_NAME = "user";
+	final static public String USER_ID_COLUMN = "id";
+	final static public String USER_PASSWORD_COLUMN = "password";
+	final static public String USER_MYNAME_COLUMN = "myname";
+	final static public String USER_CHARANAME_COLUMN = "charaname";
+	
 	final static public String REGEXP_TABLE_NAME = "seikihyogen";
 	final static public String REGEXP_ID_COLUMN = "id";
 	final static public String REGEXP_REGEXP_COLUMN = "seikihyogen";

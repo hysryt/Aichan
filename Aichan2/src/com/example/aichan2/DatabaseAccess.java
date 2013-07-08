@@ -619,6 +619,34 @@ public class DatabaseAccess {
 			return list.toArray(new String[list.size()]);
 		}
 	}
+	
+	
+	/**
+	 *  ÉÜÅ[ÉUIDìoò^
+	 */
+	public void signUpUser(String userId, String password) {
+		SQLiteDatabase db = helper.getWritableDatabase();
+		
+		ContentValues values = new ContentValues();
+		values.put(DatabaseInfo.USER_ID_COLUMN, userId);
+		values.put(DatabaseInfo.USER_PASSWORD_COLUMN, password);
+		db.insert(DatabaseInfo.USER_TABLE_NAME, null, values);
+		
+		db.close();
+	}
+	
+	/**
+	 *  ÉÜÅ[ÉUñºìoò^
+	 */
+	public void storeUserName(String userId, String userName) {
+		SQLiteDatabase db = helper.getWritableDatabase();
+		
+		ContentValues values = new ContentValues();
+		values.put(DatabaseInfo.USER_MYNAME_COLUMN, userName);
+		db.update(DatabaseInfo.USER_TABLE_NAME, values, DatabaseInfo.USER_ID_COLUMN+"=?", new String[]{userId});
+		
+		db.close();
+	}
 }
 
 

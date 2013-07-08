@@ -358,6 +358,11 @@ public class MainActivity extends Activity implements BlinkEventListener {
 					setResMessage("よろしく、"+ mUserName);
 					setUserNameState = ENDING;
 					setUserName = false;
+					// TODO: プレファレンスファイルに呼び名を登録
+					
+					// TODO: ログイン中なら名前をサーバに登録
+					
+					
 				} else if(message.equals("いいえ")) {
 					setUserNameState = HEAR_USER_NAME;
 					setResMessage("あなたのこと、なんて呼べばいい？");

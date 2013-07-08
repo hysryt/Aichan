@@ -13,6 +13,16 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+		// ユーザテーブル
+		db.execSQL(
+			"CREATE TABLE "+ DatabaseInfo.USER_TABLE_NAME +"(" +
+			"	"+ DatabaseInfo.USER_ID_COLUMN +" TEXT NOT NULL PRIMARY KEY" +
+			"	,"+ DatabaseInfo.USER_PASSWORD_COLUMN +" TEXT NOT NULL" +
+			"	,"+ DatabaseInfo.USER_MYNAME_COLUMN +" TEXT" +
+			"	,"+ DatabaseInfo.USER_CHARANAME_COLUMN +" TEXT" +
+			");"
+		);
+		
 		// 正規表現テーブル
 		db.execSQL(
 			"CREATE TABLE "+ DatabaseInfo.REGEXP_TABLE_NAME +"(" +
