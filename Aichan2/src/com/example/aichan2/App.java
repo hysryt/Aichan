@@ -8,7 +8,6 @@ public class App extends Application {
 	private static final String FONT_NAME = "migmix-1p-regular.ttf";
 	
 	public static final String FIRST_BOOT = "firstBoot";
-	public static final String USER_NAME = "username";
 	
 	public static final String PREFKEY_USERNAME = "userName";
 	

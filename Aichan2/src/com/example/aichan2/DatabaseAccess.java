@@ -647,6 +647,24 @@ public class DatabaseAccess {
 		
 		db.close();
 	}
+
+
+	public String getPassword(String userId) {
+		SQLiteDatabase db = helper.getWritableDatabase();
+		
+		Cursor c = db.query(DatabaseInfo.USER_TABLE_NAME, new String[]{DatabaseInfo.USER_PASSWORD_COLUMN}
+				, DatabaseInfo.USER_ID_COLUMN+"=?", new String[]{userId}, null, null, null);
+		
+		String password = null;
+		if(c.moveToFirst()) {
+			password = c.getString(c.getColumnIndex(DatabaseInfo.USER_PASSWORD_COLUMN));
+		}
+		
+		c.close();
+		db.close();
+		
+		return password;
+	}
 }
 
 

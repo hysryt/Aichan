@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements BlinkEventListener {
 	public static final String EXTRA_USERNAME_IS_NOT_SET = "com.example.aichan2.extraNotSetName";
@@ -216,7 +217,7 @@ public class MainActivity extends Activity implements BlinkEventListener {
 		
 		if(!showDialog) {
 			SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-			mUserName = pref.getString(App.USER_NAME, null);
+			mUserName = pref.getString(App.PREFKEY_USERNAME, null);
 			App.getInstance().setUserName(mUserName);
 	
 			if(setUserName || mUserName == null) {
@@ -331,7 +332,7 @@ public class MainActivity extends Activity implements BlinkEventListener {
 	private void setUserName(String userName) {
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
 		Editor editor = pref.edit();
-		editor.putString(App.USER_NAME, userName);
+		editor.putString(App.PREFKEY_USERNAME, userName);
 		editor.commit();
 		
 		mUserName = userName;
@@ -358,10 +359,29 @@ public class MainActivity extends Activity implements BlinkEventListener {
 					setResMessage("よろしく、"+ mUserName);
 					setUserNameState = ENDING;
 					setUserName = false;
-					// TODO: プレファレンスファイルに呼び名を登録
 					
-					// TODO: ログイン中なら名前をサーバに登録
-					
+					// TODO: ログイン中なら名前をローカルデータベースとサーバデータベースに登録
+					SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+					String loginUserId = pref.getString(App.PREFKEY_LOGIN_USERID, null);
+					if(loginUserId != null && !loginUserId.equals("")) {
+						String password;
+						
+						// ローカル
+						DatabaseOpenHelper helper = new DatabaseOpenHelper(getApplicationContext());
+						DatabaseAccess da = new DatabaseAccess(helper);
+						da.storeUserName(loginUserId, mUserName);
+						password = da.getPassword(loginUserId);
+						helper.close();
+						
+						// サーバ
+						NetAccessAsyncTask task = new NetAccessAsyncTask() {		
+							@Override
+							protected void onPostExecute(String result) {
+							}
+						};
+						task.execute("http://192.168.60.1/storeUserName.php", "POST", "userId="+ loginUserId+"&password="+password+"&userName="+mUserName);
+					} else {
+					}
 					
 				} else if(message.equals("いいえ")) {
 					setUserNameState = HEAR_USER_NAME;

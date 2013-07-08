@@ -93,12 +93,19 @@ public class SignUpActivity extends Activity {
 				if(result.equals("OK")) {
 					Toast.makeText(SignUpActivity.this, "登録できました", Toast.LENGTH_LONG).show();
 					String userId = userIdEditText.getText().toString();
+					String password = passwordEditText.getText().toString();
 
 					// 現在のログインIDとして設定
 					SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(SignUpActivity.this);
 					Editor editor = pref.edit();
 					editor.putString(App.PREFKEY_LOGIN_USERID, userId);
 					editor.commit();
+					
+					// データベースに登録
+					DatabaseOpenHelper helper = new DatabaseOpenHelper(getApplicationContext());
+					DatabaseAccess da = new DatabaseAccess(helper);
+					da.signUpUser(userId, password);
+					helper.close();
 					
 					Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
 					startActivity(intent);
