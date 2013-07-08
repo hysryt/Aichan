@@ -16,8 +16,9 @@ public class SignUpActivity extends Activity {
 	EditText userIdEditText;
 	EditText passwordEditText;
 	
-	String host = "172.18.92.131";
+	String host = "192.168.60.1";
 	String duplicationCheckFile = "DuplicationCheck.php";
+	String signUpFile = "signUp.php";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public class SignUpActivity extends Activity {
 		String strUrl = "http://"+ host +"/"+ duplicationCheckFile;
 		String tempUserId = userIdEditText.getText().toString();
 		
-		// TODO: èdï°É`ÉFÉbÉN
+		// èdï°É`ÉFÉbÉN
 		NetAccessAsyncTask task = new NetAccessAsyncTask() {		
 			@Override
 			protected void onPostExecute(String result) {
@@ -71,7 +72,7 @@ public class SignUpActivity extends Activity {
 				}
 			}
 		};
-		task.execute("http://192.168.60.1/DuplicationCheck.php", "POST", "userId="+ tempUserId);
+		task.execute("http://"+ host+"/"+ duplicationCheckFile, "POST", "userId="+ tempUserId);
 	}
 	
 	private void onClickOk() {
@@ -79,7 +80,25 @@ public class SignUpActivity extends Activity {
 		if(!checkUserIdPolicy()) return;
 		if(!checkPasswordPolicy()) return;
 		
-		// TODO: ìoò^èàóù
+		String tempUserId = userIdEditText.getText().toString();
+		String tempPass = passwordEditText.getText().toString();
+		
+		// ìoò^èàóù
+		NetAccessAsyncTask task = new NetAccessAsyncTask() {		
+			@Override
+			protected void onPostExecute(String result) {
+				if(result.equals("OK")) {
+					Toast.makeText(SignUpActivity.this, "ìoò^Ç≈Ç´Ç‹ÇµÇΩ", Toast.LENGTH_LONG).show();
+				} else if(result.equals("Duplicate")){
+					Toast.makeText(SignUpActivity.this, "ä˘Ç…égópÇ≥ÇÍÇƒÇ¢Ç‹Ç∑", Toast.LENGTH_LONG).show();
+				} else {
+					Toast.makeText(SignUpActivity.this, "ìoò^é∏îs", Toast.LENGTH_LONG).show();
+				}
+			}
+		};
+		
+		// TODO: ÉÜÅ[ÉUñºÇ™ä˘Ç…ìoò^Ç≥ÇÍÇƒÇ¢ÇÈèÍçáÇÕÇªÇÍÇ‡àÍèèÇ…ìoò^Ç≥ÇπÇÈ
+		task.execute("http://"+ host+"/"+ signUpFile, "POST", "userId="+ tempUserId +"&password="+ tempPass);
 	}
 	
 	private boolean checkUserIdPolicy() {
