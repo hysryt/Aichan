@@ -236,6 +236,8 @@ public class DatabaseAccess {
 			insertRegexp(db, 49, "(.+)(を|って)?検索");
 			insertRegexp(db, 50, "(.+)って(何|なに)");
 			insertRegexp(db, 51, "うん|はい|する|よろしく|お(ねが|願)い|頼");
+			insertRegexp(db, 52, "^ニュース$");
+			insertRegexp(db, 53, "^天気$");
 			
 	
 			progress += 100/groupCnt;
@@ -323,6 +325,8 @@ public class DatabaseAccess {
 			insertRes(db, 58, "#search#,1,はいよ");
 			insertRes(db, 59, "#beforesearch#,1,・・・検索する？");
 			insertRes(db, 60, "#search#,-1,はいよ！");
+			insertRes(db, 61, "#news#,ニュース画面に移動");
+			insertRes(db, 62, "#weather#,天気画面に移動");
 	
 			progress += 100/groupCnt;
 			task.forwardProgress((int)progress);
@@ -427,6 +431,9 @@ public class DatabaseAccess {
 			
 			int p = insertTalk(db, 50, 59);
 			insertTalkWithPrev(db, 51, 60, p);
+			
+			insertTalk(db, 52, 61);
+			insertTalk(db, 53, 62);
 			
 			db.setTransactionSuccessful();
 		} finally {

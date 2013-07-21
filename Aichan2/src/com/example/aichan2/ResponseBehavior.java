@@ -24,6 +24,10 @@ class ResponseBehavior {
 			return new BeforeSearchResponse(activity, m, responseMessage);
 		} else if(responseMessage.startsWith("#setting#")) {	// 設定
 			return new SettingResponse(activity, responseMessage);
+		} else if(responseMessage.startsWith("#news#")){
+			return new NewsResponse(activity, responseMessage);
+		} else if(responseMessage.startsWith("#weather#")) {
+			return new WeatherResponse(activity, responseMessage);
 		} else {
 			return new NormalResponse(responseMessage, m);
 		}
@@ -81,8 +85,12 @@ class NormalResponse extends ResponseBehavior {
 }
 
 
+/**
+ *  ニュース画面に移動
+ */
 class NewsResponse extends ResponseBehavior {
-	NewsResponse(Activity srcActivity) {
+	NewsResponse(Activity srcActivity, String responseMessage) {
+		resMsg = responseMessage.split(",")[1];
 		execute(srcActivity);
 	}
 	
@@ -95,8 +103,12 @@ class NewsResponse extends ResponseBehavior {
 }
 
 
+/**
+ *  天気画面に移動
+ */
 class WeatherResponse extends ResponseBehavior {
-	WeatherResponse(Activity srcActivity) {
+	WeatherResponse(Activity srcActivity, String responseMessage) {
+		resMsg = responseMessage.split(",")[1];
 		execute(srcActivity);
 	}
 	

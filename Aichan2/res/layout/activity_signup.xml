@@ -12,15 +12,31 @@
         android:layout_weight="1"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:text="新規登録を行います"
-            android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="新規登録を行います"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_weight="0"
+                android:visibility="invisible" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,14 +64,20 @@
                     android:id="@+id/userId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/text_image_selecter"
                     android:ems="10" />
 
                 <Button
                     android:id="@+id/duplicationCheckButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="重複確認" />
+                    android:background="@drawable/button_image_selecter"
+                    android:text="重複確認"
+                    android:textColor="@color/button_textcolor_selecter" />
+
             </LinearLayout>
 
             <TextView
@@ -78,8 +100,11 @@
                     android:id="@+id/password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/text_image_selecter"
                     android:ems="10" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -90,6 +115,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="決定" />
+        android:background="@drawable/button_image_selecter"
+        android:text="決定"
+        android:textColor="@color/button_textcolor_selecter" />
 
 </LinearLayout>

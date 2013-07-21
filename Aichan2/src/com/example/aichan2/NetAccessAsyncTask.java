@@ -56,6 +56,9 @@ public abstract class NetAccessAsyncTask extends AsyncTask<String, Object, Strin
 			return "Ú‘±‚Å‚«‚Ü‚¹‚ñ";
 		}
 
+		connection.setConnectTimeout(mTimeout);
+		connection.setReadTimeout(mTimeout);
+
 		try {
 			connection.setRequestMethod(method);
 			if(method.equals("POST")) {
@@ -67,7 +70,6 @@ public abstract class NetAccessAsyncTask extends AsyncTask<String, Object, Strin
 				}
 			}
 			
-			connection.setConnectTimeout(mTimeout);
 			reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 			
 			StringBuffer sb = new StringBuffer();

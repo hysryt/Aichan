@@ -18,9 +18,13 @@
             android:id="@+id/editText1"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:autoText="true"
+            android:background="@drawable/text_image_selecter"
             android:ems="10"
             android:hint="話す言葉を入力..."
+            android:inputType="text"
             android:imeOptions="actionUnspecified" >
 
             <requestFocus />

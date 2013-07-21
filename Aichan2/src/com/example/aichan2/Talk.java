@@ -100,7 +100,7 @@ public class Talk {
 		
 		// ユーザ独自テーブルから返事を検索
 		String[] userResMessages = getUserResMessage(message);
-		// TODO:見つかったらそれを返す
+		// 見つかったらそれを返す
 		if(userResMessages != null) {
 			Random rnda = new Random();
 			int ra = rnda.nextInt(userResMessages.length);

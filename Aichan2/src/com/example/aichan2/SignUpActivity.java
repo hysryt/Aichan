@@ -12,12 +12,18 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class SignUpActivity extends Activity {
 	EditText userIdEditText;
 	EditText passwordEditText;
+	
+	Button duplicationButton;
+	Button okButton;
+	ProgressBar progress;
 	
 	String duplicationCheckFile = "DuplicationCheck.php";
 	String signUpFile = "signUp.php";
@@ -38,19 +44,23 @@ public class SignUpActivity extends Activity {
 			}
 		});
 		
-		findViewById(R.id.duplicationCheckButton).setOnClickListener(new OnClickListener() {
+		duplicationButton = (Button)findViewById(R.id.duplicationCheckButton);
+		duplicationButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				onClickDuplicationCheck();
 			}
 		});
 		
-		findViewById(R.id.okButton).setOnClickListener(new OnClickListener() {
+		okButton = (Button)findViewById(R.id.okButton);
+		okButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				onClickOk();
 			}
 		});
+		
+		progress = (ProgressBar)findViewById(R.id.progress);
 		
 		Util.setFont(findViewById(R.id.root));
 	}
@@ -60,6 +70,10 @@ public class SignUpActivity extends Activity {
 		// まず規約に沿ったユーザIDかをチェック
 		if(!checkUserIdPolicy()) return;
 		
+		duplicationButton.setEnabled(false);
+		okButton.setEnabled(false);
+		progress.setVisibility(View.VISIBLE);
+		
 		String strUrl = "http://"+ App.SERVER_IP +"/"+ duplicationCheckFile;
 		String tempUserId = userIdEditText.getText().toString();
 		
@@ -67,6 +81,13 @@ public class SignUpActivity extends Activity {
 		NetAccessAsyncTask task = new NetAccessAsyncTask() {		
 			@Override
 			protected void onPostExecute(String result) {
+				duplicationButton.setEnabled(true);
+				okButton.setEnabled(true);
+				progress.setVisibility(View.INVISIBLE);
+				
+				if(this.isError()) {
+					Toast.makeText(SignUpActivity.this, "サーバにアクセスできません", Toast.LENGTH_SHORT).show();
+				}
 				if(result.equals("OK")) {
 					Toast.makeText(SignUpActivity.this, "使用可能です", Toast.LENGTH_LONG).show();
 				} else if(result.equals("NG")){
@@ -74,6 +95,7 @@ public class SignUpActivity extends Activity {
 				}
 			}
 		};
+		task.setTimeout(3000);
 		task.execute("http://"+ App.SERVER_IP +"/"+ duplicationCheckFile, "POST", "userId="+ tempUserId);
 	}
 	
@@ -82,6 +104,10 @@ public class SignUpActivity extends Activity {
 		if(!checkUserIdPolicy()) return;
 		if(!checkPasswordPolicy()) return;
 		
+		duplicationButton.setEnabled(false);
+		okButton.setEnabled(false);
+		progress.setVisibility(View.VISIBLE);
+		
 		String tempUserId = userIdEditText.getText().toString();
 		String tempPass = passwordEditText.getText().toString();
 		
@@ -89,6 +115,14 @@ public class SignUpActivity extends Activity {
 		NetAccessAsyncTask task = new NetAccessAsyncTask() {		
 			@Override
 			protected void onPostExecute(String result) {
+				duplicationButton.setEnabled(true);
+				okButton.setEnabled(true);
+				progress.setVisibility(View.INVISIBLE);
+				
+				if(this.isError()) {
+					Toast.makeText(SignUpActivity.this, "サーバにアクセスできませんでした", Toast.LENGTH_SHORT).show();
+					return;
+				}
 				if(result.equals("OK")) {
 					Toast.makeText(SignUpActivity.this, "登録できました", Toast.LENGTH_LONG).show();
 					String userId = userIdEditText.getText().toString();
@@ -116,12 +150,20 @@ public class SignUpActivity extends Activity {
 			}
 		};
 		
+		task.setTimeout(3000);
+		
 		// TODO: ユーザ名が既に登録されている場合はそれも一緒に登録させる
 		task.execute("http://"+ App.SERVER_IP +"/"+ signUpFile, "POST", "userId="+ tempUserId +"&password="+ tempPass);
 	}
 	
 	private boolean checkUserIdPolicy() {
 		String userId = userIdEditText.getText().toString();
+		
+		// 入力されてない
+		if(userId.length() == 0) {
+			userIdEditText.setError(format("入力して下さい"));
+			return false;
+		}
 		
 		// 12文字より長かったら
 		if(userId.length() > 12) {
